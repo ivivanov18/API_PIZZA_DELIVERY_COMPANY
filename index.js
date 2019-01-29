@@ -8,6 +8,7 @@ const router = require("./routes");
 const notFound = require("./lib/handlers").notFound;
 const helpers = require("./lib/helpers");
 const config = require("./config");
+const _data = require("./lib/data");
 
 const unifiedServer = (req, res) => {
   // get url and parse
