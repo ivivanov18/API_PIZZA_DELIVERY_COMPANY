@@ -7,6 +7,7 @@ const StringDecoder = require("string_decoder").StringDecoder;
 const router = require("./routes");
 const notFound = require("./lib/handlers").notFound;
 const helpers = require("./lib/helpers");
+const config = require("./config");
 
 const unifiedServer = (req, res) => {
   // get url and parse
@@ -70,6 +71,8 @@ const httpServer = http.createServer((req, res) => {
   unifiedServer(req, res);
 });
 
-httpServer.listen(3000, () => {
-  console.log("Listening on port 3000");
+httpServer.listen(config.httpPort, () => {
+  console.log(
+    `Listening on port ${config.httpPort} on ${config.envName} environmnent`
+  );
 });
